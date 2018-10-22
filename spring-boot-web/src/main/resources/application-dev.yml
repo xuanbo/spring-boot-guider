@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+# 设置日志级别，当然我们也可以采用配置文件配置
+logging:
+  level:
+    root: info
+    # com.example.springboot包日志打印级别
+    com:
+      example:
+        springboot: debug
+  # 自定义logback日志配置，推荐命名为logback-spring.xml
+  # config: logback-spring.xml

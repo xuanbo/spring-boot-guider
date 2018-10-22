@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  # redis配置
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    pool:
+      max-active: 16
+      max-idle: 8
+
+logging:
+  level:
+    root: info
+    # com.example.springboot包日志打印级别
+    com:
+      example:
+        springboot: debug
+    # 打印mybatis提交信息
+    org:
+      springframework:
+        data:
+          redis: debug

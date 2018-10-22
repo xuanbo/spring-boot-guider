@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    # hikari数据源配置
+    hikari:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/demo?userUnicode=true&characterEncoding=UTF8&useSSL=false
+      username: root
+      password: 123456
+
+mybatis:
+  # mapper的xml位置
+  mapper-locations: classpath:mapper/*Mapper.xml
+  # 包别名
+  type-aliases-package: com.example.springboot.mybatis.entity
+
+logging:
+  level:
+    root: info
+    # com.example.springboot包日志打印级别
+    com:
+      example:
+        springboot: debug
+    # 打印mybatis提交信息
+    org:
+      mybatis: debug

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mybatis.dao.DemoDao">
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id" parameterType="Demo">
+        insert into t_demo(name) values (#{name})
+    </insert>
+
+    <update id="updateById" parameterType="Demo">
+        update t_demo set name = #{name} where id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete from t_demo where id = #{id}
+    </delete>
+
+    <select id="findById" resultType="Demo" parameterType="java.lang.Long">
+        select id, name from t_demo where id = #{id}
+    </select>
+
+    <select id="findAll" resultType="Demo">
+        select id, name from t_demo
+    </select>
+
+</mapper>
